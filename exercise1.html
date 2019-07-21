@@ -17,6 +17,22 @@
     </style>
 </head>
 <body>
-<div id="mydiv">Hello world</div>
+<div id="mydiv" onmouseleave="onLeave()">Hello world!</div>
+<script>
+    var myDiv = document.getElementById('mydiv');
+    var myDivText = myDiv.innerText;
+
+    myDiv.onmouseover =  function() {
+        myDiv.innerText = 'Can I Help you!'
+    };
+
+    function onLeave() {
+        myDiv.innerText = myDivText;
+    };
+    
+    // myDiv.addEventListener('click', function() {
+    //     myDiv.style = 'background-color: red';
+    // });
+</script>
 </body>
 </html>
