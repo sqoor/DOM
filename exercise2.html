@@ -12,9 +12,23 @@
     </style>
     <script>
         /* TODO: write JS code here */
+        window.onload = function() {
+            var myDiv = document.getElementById('mydiv');
+            
+            myDiv.style = 'background-color: blue';
+
+            myDiv.onclick = function() {
+                if(myDiv.style.backgroundColor === 'blue')
+                    myDiv.style = 'background-color: red';
+                else if(myDiv.style.backgroundColor === 'red')
+                    myDiv.style = 'background-color: green';
+                else if(myDiv.style.backgroundColor === 'green')
+                    myDiv.style = 'background-color: blue';
+            };
+        };
     </script>
 </head>
 <body>
-<div id="mydiv"></div>
+    <div id="mydiv"></div>
 </body>
 </html>
