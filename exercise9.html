@@ -3,10 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <title>Exercise #9: Labyrinth game</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #ccc;
+        }
+        #map {
+            margin: 20px auto;
+            height: 500px;
+            width: 600px;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            justify-content: center;
+            border: solid 1px black;
+
+            position: relative;
+        }
+        .cell {
+            height: 100px;
+            width: 100px;
+        }
+        .wall {
+            background-color: grey ;
+        }
+        .road {
+            background-color: white;
+        }
+        .hero {
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* background-color: red; */
+            background-image: url('https://banner2.kisspng.com/20180629/tts/kisspng-sprite-video-game-clip-art-bird-frame-5b36bf549ab784.4949819315303145806337.jpg');
+            background-repeat: no-repeat;
+            background-size: 100%; 
+        }
+    </style>
     <script src="labyrinth.class.js"></script>
     <script src="game.js"></script>
 </head>
 <body>
-<div id="map"></div>
+<div id="map">
+
+        <div class="cell hero"></div>
+        <!-- <div class='cell road'></div>
+        <div class='cell road'></div>
+        <div class='cell wall'></div>
+        <div class='cell wall'></div>
+        <div class='cell wall'></div>
+        <div class='cell road'></div>
+
+        <div class='cell wall'></div>
+        <div class='cell road'></div>
+        <div class='cell road'></div>
+        <div class='cell road'></div>
+        <div class='cell wall'></div>
+        <div class='cell road'></div>
+
+        <div class='cell wall'></div>
+        <div class='cell road'></div>
+        <div class='cell wall'></div>
+        <div class='cell road'></div>
+        <div class='cell road'></div>
+        <div class='cell road'></div>
+
+        <div class='cell wall'></div>
+        <div class='cell road'></div>
+        <div class='cell wall'></div>
+        <div class='cell wall'></div>
+        <div class='cell wall'></div>
+        <div class='cell road'></div>
+
+        <div class='cell wall'></div>
+        <div class='cell road'></div>
+        <div class='cell road'></div>
+        <div class='cell road'></div>
+        <div class='cell wall'></div>
+        <div class='cell road'></div> -->
+</div>
 </body>
 </html>
