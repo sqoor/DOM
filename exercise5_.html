@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #4 (5): Formatting text</title>
+    <style>
+        div {
+            width: 600px;
+            height: 100px;
+            border: 1px solid black;
+            margin-top: 10px;
+            /* default options */
+            font-family: Arial;
+            font-size: 12pt;
+        }
+    </style>
+</head>
+<body>
+<form name="form">
+    <select name="font_family" id="font_family">
+        <option value="Arial" selected>Arial</option>
+        <option value="Verdana">Verdana</option>
+        <option value="Helvetica">Helvetica</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Courier New">Courier New</option>
+    </select>
+    <select name="font_size" id="font_size">
+        <option value="8pt">8pt</option>
+        <option value="10pt">10pt</option   >
+        <option value="12pt" selected>12pt</option>
+        <option value="14pt">14pt</option>
+        <option value="16pt">16pt</option>
+    </select>
+    <label>Italic <input type="checkbox" name="font_italic" id="font_italic"></label>
+    <label>Bold <input type="checkbox" name="font_bold" id="font_bold"></label>
+    <label>Underline <input type="checkbox" name="font_underline" id="font_underline"></label>
+</form>
+
+<div id="text">The quick brown fox jumps over the lazy dog</div>
+
+<script>
+    var div = document.getElementById('text');
+    var fontFamily = document.getElementById('font_family');
+    var fontSize = document.getElementById('font_size');
+    var fontItalic = document.getElementById('font_italic');
+    var fontBold = document.getElementById('font_bold');
+    var fontUnderline = document.getElementById('font_underline');
+
+    fontFamily.onchange = function() {
+        div.style.fontFamily = fontFamily.value;
+    };
+
+    fontSize.onchange = function() {
+        div.style.fontSize = fontSize.value;
+    };
+
+    fontItalic.onclick = function() {
+        // console.log('worked');
+        // console.log(fontItalic.checked);
+
+        if(fontItalic.checked === true)
+            div.style.fontStyle = 'italic';
+        else 
+            div.style.fontStyle = 'normal';
+    };
+
+    fontBold.onclick = function() {
+        // console.log('worked');
+        // console.log(fontBold.checked);
+
+        if(fontBold.checked === true)
+            div.style.fontWeight = 'bold';
+        else 
+            div.style.fontWeight = 'normal';
+    };
+
+    fontUnderline.onclick = function() {
+        // console.log('worked');
+        // console.log(fontBold.checked);
+
+        if(fontUnderline.checked === true)
+            div.style.textDecoration = 'underline';
+        else 
+            div.style.textDecoration = 'none';
+    };
+    
+</script>
+</body>
+</html> 
