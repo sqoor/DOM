@@ -6,6 +6,24 @@
     <link rel="stylesheet" href="exercise7.css">
     <script>
         /* TODO this is for you to complete */
+        window.onload = function() {
+            var songTextInput = document.getElementById('songTextInput');
+            var addBtn = document.getElementById('addButton');
+            var playlist = document.getElementById('playlist');
+            var newSong;
+
+            addBtn.onclick = function() {
+                if(songTextInput.value === '') {
+                    alert('There is no song name...')
+                    return;
+                }
+                
+                newSong = document.createElement('li');
+                newSong.innerText = songTextInput.value;
+                playlist.appendChild(newSong);
+                songTextInput.value = '';
+            }
+        };
     </script>
 </head>
 <body>
@@ -16,6 +34,7 @@
 </form>
 
 <ul id="playlist">
+    
 </ul>
 
 </body>
