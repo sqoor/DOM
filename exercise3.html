@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #2b (3): Randomizing initial color</title>
+    <style>
+        #mydiv {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        /* TODO: write JS code here */
+        window.onload = function() {
+            var myDiv = document.getElementById('mydiv');
+
+            // Initial value: 
+            var num = Math.random() * 3;
+            num = Math.ceil(num);
+            if(num === 1)
+                myDiv.style = 'background-color: blue';
+            if(num === 2)
+                myDiv.style = 'background-color: red';
+            if(num === 3)
+                myDiv.style = 'background-color: green';
+            
+            // onclick color:
+            myDiv.onclick = function() {
+                if(myDiv.style.backgroundColor === 'blue')
+                    myDiv.style = 'background-color: red';
+                else if(myDiv.style.backgroundColor === 'red')
+                    myDiv.style = 'background-color: green';
+                else if(myDiv.style.backgroundColor === 'green')
+                    myDiv.style = 'background-color: blue';
+            };
+
+
+
+            
+
+        };
+    </script>
+</head>
+<body>
+    <div id="mydiv"></div>
+</body>
+</html>
