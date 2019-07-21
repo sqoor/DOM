@@ -22,8 +22,6 @@ function initGrid() {
         choice.style.backgroundColor = color;
         choice.classList = 'choice';
         choice.addEventListener('click', function(e) {
-            console.log('bg-color', e.target.style.backgroundColor);
-            console.log('id', e.target.id);
             selectedDiv.style.backgroundColor = e.target.id;
             selectedDiv.innerText = e.target.id; 
         });
