@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #7: Simple playlist</title>
+    <link rel="stylesheet" href="exercise7.css">
+    <style>
+        span {
+            float: right;
+        }
+
+        span:hover {
+            padding: 3px;
+            color: white;
+            background-color: red;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        /* TODO this is for you to complete */
+        window.onload = function() {
+            var songTextInput = document.getElementById('songTextInput');
+            var addBtn = document.getElementById('addButton');
+            var playlist = document.getElementById('playlist');
+            var deleteLink;
+            var newSong;
+
+            addBtn.onclick = function() {
+                var deleteLink;
+
+                if(songTextInput.value === '') {
+                    alert('There is no song name...')
+                    return;
+                }
+                
+                deleteLink = document.createElement('span');
+                deleteLink.innerHTML = '&Chi;';
+                deleteLink.addEventListener('click', function(e) {
+                    var song = e.path[1]; 
+                    song.remove();
+                });
+                
+                newSong = document.createElement('li');
+                newSong.innerText = songTextInput.value;
+                newSong.id = 'song' + (playlist.children.length + 1);
+                newSong.appendChild(deleteLink);
+
+                playlist.appendChild(newSong);
+                
+                songTextInput.value = '';
+            }
+           
+        };
+    </script>
+</head>
+<body>
+
+<form>
+    <input type="text" id="songTextInput" size="40" placeholder="Song name">
+    <input type="button" id="addButton" value="Add Song">
+
+    
+</form>
+
+<ul id="playlist">
+    
+</ul>
+
+</body>
+</html>
+
